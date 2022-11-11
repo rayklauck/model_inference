@@ -21,8 +21,8 @@ int main() {
     int n = 0;
     for (int i = 0; i<iterations; i++){
         //system("Color E4");
-        for (int j = 0; j<digits_per_iteration; j++){
-            n++;
+        n+=digits_per_iteration;
+        for (int j = 0; j<n; j++){
             cout << f(n);
         }
         cout << "\nGuess next "<< digits_to_guess << " Digits: ";
@@ -42,7 +42,7 @@ int main() {
                 }
             }
         }
-        cout << "\n";
+        cout << "\n\n";
 
     }
 
