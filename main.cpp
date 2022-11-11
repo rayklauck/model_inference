@@ -10,7 +10,7 @@ using namespace std;
 int main() {
 
     // dummy func
-    RandomFunction f(2, 0, 0, 0);
+    RandomFunction f(2);
 
     //auto f = [](int n){return 1;};
 

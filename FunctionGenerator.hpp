@@ -6,10 +6,20 @@
 #include <vector>
 #include <cmath>
 
-int num_generator_functions = 3;
-std::function<bool(int)> generator_functions[] = {[] (int n) {return ((int) std::sin(n)) % 2;},
-                                                  [] (int n) {return (n * n) % 2;},
-                                                  [] (int n) {return n % 2;}};
+int num_generator_functions = 9;
+std::function<double(int)> generator_functions[] = {[] (int n) {return ((int) (6 * std::sin(n)));},
+                                                  [] (int n) {return (n * n);},
+                                                  [] (int n) {return n % 2;},
+                                                  [] (int n) {return (int) exp(n);},
+                                                  [] (int n) {return n*(n+1);},
+                                                  [] (int n) {return n;},
+                                                  [] (int n) {return n*(n+1)*n;},
+                                                    [] (int n) {return n<6 || n>22;},
+                                                    [] (int n) {return n>12;}
+
+};
+
+
 
 class RandomFunction {
     int num_generator_functions;
