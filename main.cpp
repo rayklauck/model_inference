@@ -10,7 +10,9 @@ using namespace std;
 int main() {
 
     // dummy func
-    auto f = [](int n){return 1;};
+    RandomFunction f(2, 0, 0, 0);
+
+    //auto f = [](int n){return 1;};
 
     const unsigned iterations = 5;
     const unsigned digits_per_iteration = 6;
