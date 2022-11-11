@@ -3,4 +3,6 @@ project(model_inference_study)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(model_inference_study main.cpp FunctionGenerator.hpp)
+add_executable(model_inference_study main.cpp FunctionGenerator.hpp RandomPatternGenerator.hpp)
+
+add_executable(b test.cpp)
