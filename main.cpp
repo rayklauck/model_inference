@@ -1,7 +1,6 @@
 #include <iostream>
-#include <stdlib.h>
 #include "FunctionGenerator.hpp"
-
+#include "RandomPatternGenerator.hpp"
 
 
 using namespace std;
@@ -10,20 +9,20 @@ using namespace std;
 int main() {
 
     // dummy func
-    RandomFunction f(2);
-
+    //RandomFunction f(4);
     //auto f = [](int n){return 1;};
+    RandomPatternGenerator f(0.5);
 
     const unsigned iterations = 5;
-    const unsigned digits_per_iteration = 6;
-    const unsigned digits_to_guess = 3;
+    const unsigned digits_per_iteration = 10;
+    const unsigned digits_to_guess = 4;
 
     int n = 0;
     for (int i = 0; i<iterations; i++){
         //system("Color E4");
         n+=digits_per_iteration;
         for (int j = 0; j<n; j++){
-            cout << f(n);
+            cout << f(j);
         }
         cout << "\nGuess next "<< digits_to_guess << " Digits: ";
         string user_input;
@@ -31,11 +30,11 @@ int main() {
         int plus = 0;
 
         for (int k = 0; k<user_input.size(); k++){
-
             if (user_input.at(k)=='0' or user_input.at(k)=='1'){
                 plus ++;
                 bool prediction = (user_input.at(k) == '1');
-                if (prediction == f(n+plus)){
+
+                if (prediction == f(n + plus - 1)){
                     cout << "correct ";
                 } else {
                     cout << "false ";
