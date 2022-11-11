@@ -17,7 +17,7 @@ public:
 
     bool operator() (int n) {
         if (n + 1 >= num_precomputed) {
-            for (int i = 0; i <= n; i++) {
+            for (int i = num_precomputed; i <= n; i++) {
                 table.push_back(R.random_bool(one_prob));
             }
         }
