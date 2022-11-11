@@ -47,7 +47,11 @@ public:
             for (int i = num_precomputed; i <= n; i++) {
 
                 for (int j = 0; j < num_generator_functions; j++) {
-                    b = b || generator_functions[generator_functions_indx[j]](n);
+                    if (j % 2 == 0) {
+                        b = b || generator_functions[generator_functions_indx[j]](n);
+                    } else {
+                        b = b && generator_functions[generator_functions_indx[j]](n);
+                    }
                 }
 
                 precomputed.push_back(b);
